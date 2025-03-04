@@ -31,7 +31,11 @@ export default function ResetPasswordForm({ token }: { token: string }) {
             setMessage("Contraseña restablecida. Redirigiendo...");
             setTimeout(() => router.push("/login"), 3000);
         } catch (err) {
-            setMessage("Hubo un problema al restablecer la contraseña.");
+            if (err instanceof Error) {
+                setMessage(err.message);
+            } else {
+                setMessage("Ocurrió un error desconocido");
+            }
         }
     };
 
