@@ -30,7 +30,7 @@ export default function LoginForm() {
             localStorage.setItem("token", data.token); // Guardar JWT en localStorage
 
             router.push("/dashboard"); // Redirigir al dashboard
-        } catch (err) {
+        } catch {
             setError("Usuario o contraseña incorrectos");
         }
     };

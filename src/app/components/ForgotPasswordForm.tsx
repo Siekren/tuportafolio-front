@@ -21,7 +21,7 @@ export default function ForgotPasswordForm() {
             if (!response.ok) throw new Error("No se pudo enviar el correo");
 
             setMessage("Si el correo está registrado, recibirás un enlace de recuperación.");
-        } catch (err) {
+        } catch {
             setMessage("Hubo un problema al enviar el correo.");
         }
     };
